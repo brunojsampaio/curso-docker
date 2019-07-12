@@ -8,7 +8,8 @@ services:
       - ./backend:/backend
     ports:
       - 3000:3000
-    command: bash -c "cd /backend && npm i && node app"
+      - 9229:9229
+    command: bash -c "cd /usr/src/app && npm i && npm start"
   frontend:
     image: nginx:1.13
     volumes:
